@@ -14,11 +14,12 @@ class DisplayActivity : AppCompatActivity() {
         val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             if(it.resultCode == RESULT_OK){
                 it.data?.apply {
-//                    lyricsDisplayTextView.textSize = getStringExtra().toFloat()
+                    lyricsDisplayTextView.textSize = getFloatExtra(RESULT_KEY,0f)
                 }
             }
     }
     // TODO Step 3: Use returned value for lyricsDisplayTextView text size
+
 
     private lateinit var lyricsDisplayTextView: TextView
     private lateinit var textSizeSelectorButton: Button
